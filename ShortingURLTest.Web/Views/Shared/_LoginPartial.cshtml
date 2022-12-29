@@ -1,0 +1,42 @@
+﻿<link href="~/css/login.css" rel="stylesheet" type="text/css" />
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title logo_text">LILLI URL</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email<span class="text-danger">*</span> </label>
+                        <input type="email" id="loginemail" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Password<span class="text-danger">*</span> </label>
+                        <input type="password" id="loginpassword"required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <input type="checkbox">
+                            <span class="label-fancy my-1">Remember Me</span>
+
+                            <a href="" data-toggle="modal" data-target="#forgetModal" class="label-fancy forget ml-auto my-1">Forget Password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group form-button">
+                        <button type="button" onclick='LoginUsers()' class="btn btn-block register-btn">Sign In</button>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<Partial name="_ForgetPartial" />
+<script src="~/js/Register.js"></script>

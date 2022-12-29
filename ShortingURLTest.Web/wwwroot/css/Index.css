@@ -1,0 +1,138 @@
+﻿.logo-text {
+    font-family: Bungee,Impact,sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: .07em;
+    line-height: 120.5%;
+    text-decoration: none;
+    text-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+    color:#fff;
+}
+.convert_button {
+    border-radius:5px;
+}
+    .convert_button button {
+        background: #0980a1;
+        color: #fff !important;
+        font-weight: bold;
+    }
+#buttons {
+    margin: 2px;
+}
+
+    #buttons button {
+        border: 1px;
+        width: 20%;
+        font-size: 25px;
+        padding: 10px;
+        color: #3248a8;
+    }
+.card-body p{
+    font-size:19px;
+    font-weight:bold;
+    color:#fff!important;
+}
+
+.btn-xl {
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+.home_agree a:hover {
+    color: #fff;
+}
+
+    .btn-t-blue {
+        background-color: #0980a1;
+        border-color: #0980a1;
+        color: #fff;
+    }
+.heroHome-2__cont {
+    line-height: 140%;
+    position: relative;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font{
+    font-weight:bold;
+    font-size:16px;
+}
+#generatedText{
+    display:none;
+    font-size:18px;
+}
+.custom-search {
+    position: relative;
+}
+
+.custom-search-input {
+    width: 100%;
+    padding-right: 100px !important;
+    box-sizing: border-box;
+}
+
+.custom-search-bottons {
+    position: absolute;
+    right: 1px;
+    top: 7px;
+    bottom: 3px;
+    line-height: 1 !important;
+    z-index: 4;
+    border: none;
+    color: blue;
+    display: none;
+    font-weight:bold;
+}
+
+#buttons a {
+    color: #fff;
+}
+.icon:hover {
+    color: #fff;
+}
+
+.icon {
+    height: 150px;
+    width: 150px;
+    line-height: -150;
+    font-size: 90px;
+    text-align: center;
+    border-radius: 90%;
+    color: #fff;
+}
+
+.fa-facebook {
+    background: #0165E1;
+}
+
+.fa-twitter {
+    background: #1DA1F2;
+}
+
+.fa-whatsapp {
+    background: #25D366;
+}
+
+.fa-google {
+    background: #DB4437;
+}
+
+.fa-linkedin {
+    background: #0165E1;
+
+}
+
+/*.fa-instagram {
+    background: #F77737;
+}*/
+
+.myurls-short {
+    display: none;
+}
+.register-btn{
+    font-size:18px;
+}

@@ -1,0 +1,93 @@
+﻿
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+@*<link href="~/css/Index.css" rel="stylesheet" type="text/css" />*@
+<link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="~/css/Index.css" rel="stylesheet" type="text/css" />
+
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body" id="refcard">
+                            <h3>Generate Short URL</h3>
+                            <div>
+                                <div class="text-danger font" id="invalidurl"></div>
+                                <div class="row p-3">
+                                    <input id='mapUrl' class="form-control form-control-lg col-md-8" type="text" placeholder="Paste or write your URL and we will make it little">
+                                    <input id='customUrl' class="form-control form-control-lg col-lg-4" type="text" placeholder="Custom Url(alias)">
+                                </div>
+                                <div class="modal-body">
+                                     <div>
+                                        <div class="row text-center">
+                                            <div class="col-sm-2 new"><a onclick="Facebook()"href="#" class="fa fa-facebook" id="icon"></a></div>
+                                            <div class="col-sm-2 new"><a onclick="Twitter()"href="#" class="fa fa-twitter" id="icon"></a></div>
+                                            <div class="col-sm-2 new"><a onclick="OpenGmail()"href="#" class="fa fa-envelope" id="icon"></a></div>
+                                            <div class="col-sm-2 new"><a onclick="Whatsapp()"href="#" class="fa fa-whatsapp" id="icon"></a></div>
+                                            @*<div class="col-sm-2 new"><a onclick="Google()"href="#" class="fa fa-google" id="icon"></a></div>*@
+                                            <div class="col-sm-2 new"><a onclick="Linkedin()"href="#" class="fa fa-linkedin" id="icon"></a></div>                                                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="convert_button">
+                                <button type="button" onclick='SaveURLMapping()' id='btnURL' class="btn btn-lg btn-block waves-effect waves-light mb-1">Generate URL</button>
+                            </div>
+                            <div class="custom-search">
+                                <input type="text" class="form-control" id="generatedText" />
+                                <span class="btn custom-search-bottons" onclick="CopyText()" id="copyBtn" type="button">Copy</span>
+                            </div>
+                            <div class="row myurls-short mt-3">
+                                <div class="col-sm-3"style="float:left">
+                                    <button id="MyUrls"data-target="#myModal" data-toggle="modal" class="btn btn-lg btn-outline-success btn-block waves-effect waves-light mb-1">My URLs</button>
+                                </div>
+                                <div class="col-sm-9"style="float:right">
+                                    <button onclick="anotherShort()" class="btn btn-lg btn-success btn-block waves-effect waves-light mb-1">Shorten another</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="heroHome-2__cont font-weight-bold">
+                        <div class="card-body">
+                            <p>Welcome to</p>
+                            <h1 class="logo-text">LILLI URL</h1>
+                            <p>Create a free account to enjoy:</p>
+                            <p><i class="fa fa-check" aria-hidden="true"></i> Easy Link Shortening</p>
+                            <p><i class="fa fa-check" aria-hidden="true"></i> Full Link History</p>
+                            <p><i class="fa fa-check" aria-hidden="true"></i> Customized TinyURLs</p>
+                            <div class="home_agree">
+                                <a href="#" data-target="#registerModal" data-toggle="modal" class="btn btn-xl btn-t-blue">Create Free Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            <br />
+        </div>
+    </div>
+</div>
+<div id="myurlpage"data-target="#myModal" data-toggle="modal" ></div>
+@if (ViewBag.user != null)
+{
+    <input type="hidden" id="userId" value="@ViewBag.user.Id" />
+}
+<partial name="_SharedURLPartial" />
+<partial name="_MyUrlsPartial" />
+<!-- end main content-->
+<script src="assets/libs/jquery/jquery.min.js"></script>
+<script src="~/toaster/toastr.min.js"></script>
+<script src='~/js/home.js'></script>
+
+@*<partial name="_RegisterPartial" />
+<partial name="_MyUrlsPartial" />*@

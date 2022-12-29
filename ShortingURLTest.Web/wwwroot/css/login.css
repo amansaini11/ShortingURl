@@ -1,0 +1,28 @@
+﻿
+
+.form-group{
+    font-size:18px;
+}
+.logo_text {
+    font-family: Bungee,Impact,sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: .07em;
+    line-height: 120.5%;
+    text-decoration: none;
+    text-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+    color: #0980a1;
+}
+.form-button button {
+    background: #0980a1;
+    color: #fff;
+}
+.form-button button:hover {
+    color: #fff;
+    background: #0980a1;
+}
+.forget {
+    color: #0980a1;
+    font-weight:bold;
+}

@@ -1,0 +1,144 @@
+﻿/*body {
+}*/
+
+.tinyurl {
+    font-size: 20px;
+    color: black;
+}
+
+.orignalUrl {
+    font-size: 13px;
+    color: grey;
+    overflow: hidden;
+}
+
+.buttons {
+    padding: 5px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share {
+    color: #24a0ed;
+    border: 1px solid #24a0ed;
+}
+
+    .share:hover {
+        color: #fff;
+        background: #24a0ed;
+        transition: all ease 1s;
+    }
+
+.copy {
+    color: #3A833A;
+    border: 1px solid #3A833A;
+    margin-bottom: 4%;
+}
+
+    .copy:hover {
+        color: #fff;
+        background: #3A833A;
+        transition: all ease 1s;
+    }
+
+.remove {
+    color: #D4403A;
+    border: 1px solid #D4403A;
+}
+
+    .remove:hover {
+        color: #fff;
+        background: #D4403A;
+        transition: all ease 1s;
+    }
+
+.open {
+    color: #000;
+    border: 1px solid #000;
+}
+
+    .open:hover {
+        color: #fff;
+        background: #000;
+        transition: all ease 1s;
+    }
+
+#divUrl {
+    display: flex;
+}
+
+#lilli{
+    margin-left:300px;
+    color: red;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.dropdown-menu.show {
+    left: 78% !important;
+}
+
+.new {
+    height: 50px;
+    width: 50px;
+    line-height: -100px;
+    text-align-last:match-parent;
+    border-radius: 50%;
+    color: #fff;
+}
+
+
+.newicons{
+    width: 290px;
+    margin-left: -9.5%;
+    margin-top: -3.5%;
+}
+
+#icon {
+    height: 50px;
+    width: 50px;
+    line-height: -150;
+    font-size: 245%;
+    padding-top: 9%;
+    text-align: center;
+    border-radius: 90%;
+    color: #fff;
+}
+
+.fa-envelope {
+    background: #cb2027;
+    color: white;
+}
+
+#newcanvas {
+    background-image: url('/image/QRCodeNEW.jpg');
+    width: auto;
+    height: auto;
+    background-size: contain;
+    background-size: 80% 70%;
+    margin-left: 15px;
+}
+
+.btn-blockk {
+    background-color: green;
+    color: white;
+    height: 38px;
+    width: 95px;
+    margin-left: 15px;
+}
+
+#fbbbb {
+    font-size: 110%;
+    margin-left: 30px;
+}
+
+.newfacebook{
+    margin-left: 30px;
+    margin-bottom: 8px;
+}
+
+.hellooo{
+    font-size: 13px;
+}

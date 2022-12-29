@@ -1,0 +1,40 @@
+﻿
+<link href="~/css/login.css" rel="stylesheet" type="text/css" />
+<div class="modal fade " id="registerModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title logo_text">LILLI URL</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name<span class="text-danger">*</span> </label>
+                        <input type="text" id="name" min="3" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email<span class="text-danger">*</span> </label>
+                        <input type="email" id="email" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Password<span class="text-danger">*</span> </label>
+                        <input type="password"id="password" required class="form-control">
+                    </div>
+                    <div class="form-group form-button">
+                        <button type="button" onclick="SaveUsers()" class="btn btn-block register-btn">Create An Account</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="my-3 text-center">
+                Already a user? <a href="" style="font-size:18px;" data-target="#loginModal" data-toggle="modal" class="forget">Log In</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Register.js"></script>
+<partial name="_LoginPartial" />
+<div id="loadlogin" data-target="#loginModal" data-toggle="modal"></div>

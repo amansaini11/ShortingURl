@@ -1,0 +1,170 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Lilli URL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Create your own lilli url links" name="description" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- jquery.vectormap css -->
+    <link href="~/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Profile.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body data-layout="horizontal">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar navbar navbar-dark bg-transparent">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-light logo-text" href="#">LILLI URL</a>
+                    <div class="navbar-header ml-auto" >
+                        <button type="button" class="navbar-toggle bg-light " data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link active" data-toggle="modal" data-target="#myModal" aria-current="page" href="#">My URLs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Plans</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Features
+                                    </a>
+                                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#LinkManagement" href="#">Link Management</a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#BrandedCustomize" href="#">Branded & Customized Links </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#Compaign"href="#">Compaign Monitoring & Analytics </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#HowItWork"href="#">How it Works </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#AboutLilliUrl"href="#">About Lilli Url </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="d-flex" id="Login">
+                            <div class="dropdown d-inline-block user-dropdown">
+                                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="rounded-circle header-profile-user" src="~/assets/images/users/avatar-2.jpg"
+                                     alt="Header Avatar">
+                                    <span class="d-none d-xl-inline-block ml-1 text-light"> @User.Identity.Name </span>
+                                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a class="dropdown-item" asp-action="Profile" asp-controller="Home"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="/Home/Logout"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout <input type="hidden" value="@Convert.ToInt32(TempData["id"])" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </nav>
+        </header>
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <div class="card p-3 py-4">
+                        <div class="text-center" style="color:#0980a1;font-size:25px;">Profile Management</div>
+                        <div class="text-center bordered mb-4"></div>
+                        <h2>Update Information :</h2>
+                        <div class="text-center">
+                            <img src="~/image/user.png" width="100" class="rounded-circle"><br />
+                            <button class="btn btn-success mt-4">Update Photo</button>
+                        </div>
+                        <p class="profile-text">Contact Information :</p>
+                        <div class="row justify-content-center">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="col-md-7 mb-4">
+                                    <div class="row">
+                                        <div class="col-md-4 form">
+                                            <label for="recipient-name" class="col-form-label">Name</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="loginpassword" value="@ViewBag.user.UserName" required class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 mb-4">
+                                    <div class="row">
+                                        <div class="col-md-4 form">
+                                            <label for="recipient-name" class="col-form-label">E-mail Address</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="email" id="loginpassword" value="@ViewBag.user.Email" required class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="buttons text-center">
+                            <button class="btn btn-outline-primary px-5 ">Update</button>
+                        </div>
+                        <div class="text-right mt-4">
+                            <button class="btn btn-outline-danger px-5 " onclick="RemoveAccount(@ViewBag.user.Id)">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <Partial name="_MyUrlsPartial" />
+    <Partial name="_LinkManagement" />
+    <Partial name="_BrandedCustomize" />
+    <Partial name="_Compaign" />
+    <Partial name="_HowItWorks" />
+    <Partial name="_AboutLilliUrl" />
+
+        <!-- JAVASCRIPT -->
+        <script src="~/assets/libs/jquery/jquery.min.js"></script>
+        <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="~/assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- jquery.vectormap map -->
+        <script src="~/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="~/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+
+        <!-- Required datatable js -->
+        <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Responsive examples -->
+        <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+        <script src="~/assets/js/app.js"></script>
+        <script src="~/js/Register.js"></script>
+
+    </div>
+</body>
+</html>

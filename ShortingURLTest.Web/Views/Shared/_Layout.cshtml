@@ -1,0 +1,147 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lilli URL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Create your own lilli url links" name="description" />
+    <!-- App favicon -->
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- jquery.vectormap css -->
+    <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-layout="horizontal">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar navbar navbar-dark bg-transparent">
+
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                     <a class="navbar-brand text-light logo-text" href="#">LILLI URL</a>
+                    <div class="navbar-header ml-auto" >
+                        <button type="button" class="navbar-toggle bg-light " data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link active" id="myurl" data-toggle="modal" data-target="#myModal" aria-current="page" href="#">My URLs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Plans</a>
+                                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#LinkManagement" href="#">Link Management</a>
+                                        </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Features
+                                    </a>
+                                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#LinkManagement" href="#">Link Management</a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#BrandedCustomize" href="#">Branded & Customized Links </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#Compaign" href="#">Compaign Monitoring & Analytics </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#HowItWork" href="#">How it Works </a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#AboutLilliUrl" href="#">About Lilli Url </a>
+                                    </div>
+                                </li>
+                                @if (User.Identity.IsAuthenticated == false)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="SignUp" href="#" data-target="#registerModal" data-toggle="modal">Sign Up</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="SignIn" href="#" data-target="#loginModal" data-toggle="modal">Sign In</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="d-flex" id="Login">
+                                <div class="dropdown d-inline-block user-dropdown">
+                                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
+                                         alt="Header Avatar">
+                                        <span class="d-none d-xl-inline-block ml-1"> @User.Identity.Name </span>
+                                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <!-- item-->
+                                        <a class="dropdown-item" asp-action="Profile" asp-controller="Home"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item text-danger" href="/Home/Logout"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+        @RenderBody()
+    </div>
+
+    
+
+    <partial name="_RegisterPartial" />
+    <Partial name="_LoginPartial" />
+    <Partial name="_MyUrlsPartial" />
+    <Partial name="_LinkManagement" />
+    <Partial name="_BrandedCustomize" />
+    <Partial name="_Compaign" />
+    <Partial name="_HowItWorks" />
+    <Partial name="_AboutLilliUrl" />
+    <Partial name="_SharedURLPartial" />
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- jquery.vectormap map -->
+    <script src="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+    <script src="~/js/Register.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

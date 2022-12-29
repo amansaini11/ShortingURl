@@ -1,0 +1,78 @@
+﻿
+<link href="~/css/Index.css" rel="stylesheet" type="text/css" />
+<link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@*<div class="modal fade" id="NewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog mw-100 w-75" role="document">*@
+        
+
+
+
+@*<div class="modal-body">  
+   <div id="buttons">
+         <div class="row text-center">
+          <div class="col-sm-2 "><a onclick="Whatsapp()" href="whatsapp://" class="fa fa-whatsapp icon"></a></div>
+          <div class="col-sm-2 "><a onclick="Facebook()"href="https://www.facebook.com/profile" class="fa fa-facebook icon"></a></div>
+          <div class="col-sm-2 "><a onclick="Twitter()"href=" https://publish.twitter.com/" class="fa fa-twitter icon"></a></div>
+          <div class="col-sm-2 "><a onclick="Google()"href="https://www.google.com/" class="fa fa-google icon"></a></div>
+          <div class="col-sm-2 "><a onclick="Linkedin()"href="https://in.linkedin.com/" class="fa fa-linkedin icon"></a></div>
+          <div class="col-sm-2 "><a onclick="Instagram()"href="https://www.Instagram.com/" class="fa fa-instagram icon"></a></div>
+           </div>
+     </div>
+ </div> *@
+ @*</div>
+        </div>*@
+
+
+
+@*<div id="myurlpage"data-target="#myModal" data-toggle="modal" ></div>
+@if (ViewBag.user != null)
+{
+    <input type="hidden" id="userId" value="@ViewBag.user.Id" />
+}
+<partial name="_RegisterPartial" />
+<partial name="_MyUrlsPartial" />*@
+<!-- end main content-->
+<script src="assets/libs/jquery/jquery.min.js"></script>
+<script src="~/toaster/toastr.min.js"></script> 
+<script src='~/js/home.js'></script>
+
+
+
+@*<button type="button" name="btnLink" id="sharebtn">Social Media</button>*@
+
+ <div class="modal fade" id="ModalPopUp" role="dialog">
+    
+<div class="modal-dialog err-pop" style="">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button id="buttons" type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+       @* <div class="modal-body" style="text-align:center;">
+            <div id="sharebtn">
+         <div class="column text-center">
+        <div class="col-sm-2 "><a onclick="Whatsapp()" href="whatsapp://" class="fa fa-whatsapp icon"></a>Whatsapp</div>
+        <div class="col-sm-2 "><a onclick="Facebook()"href="https://www.facebook.com/profile" class="fa fa-facebook icon"></a>Facebook</div>
+         <div class="col-sm-2 "><a onclick="Twitter()"href="https://publish.twitter.com/" class="fa fa-twitter icon"></a>Twitter</div>
+        <div class="col-sm-2 "><a onclick="Google()"href="https://www.google.com/" class="fa fa-google icon"></a>Google</div>
+       <div class="col-sm-2 "><a onclick="Linkedin()"href="https://in.linkedin.com/" class="fa fa-linkedin icon"></a>LinkedIn</div>
+       <div class="col-sm-2 "><a onclick="Instagram()"href="https://www.Instagram.com/" class="fa fa-instagram icon"></a>Instagram</div>
+           </div>
+     </div>
+        </div>*@
+    </div>
+    </div>
+</div>
+
+@*<script src="https://code.jquery.com/jquery-1.10.0.min.js"
+    integrity="sha256-2+LznWeWgL7AJ1ciaIG5rFP7GKemzzl+K75tRyTByOE="
+    crossorigin="anonymous"></script>*@
+<script>
+    $("#sharebtn").click(function () {
+        $('#ModalPopUp').modal('show');
+    })
+</script>

@@ -1,0 +1,82 @@
+﻿<link href="~/css/login.css" rel="stylesheet" type="text/css" />
+<link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+<link href="~/css/Index.css" rel="stylesheet" type="text/css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog mw-100 w-75" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id=lilli  >Your Recent Lilli URLs</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @if (Model != null)
+                {
+                    foreach (var url in Model)
+                    {
+                        <div class="row border-bottom">
+                            <div id= "divUrl" class="col-sm-12 tinyurl pl-2">https:7275<div id="lilliurl">/@url.TinyUrl </div></div>
+                            <a class="col-sm-12 orignalUrl pl-2" href=@url.Orignalurl>@url.Orignalurl</a>                          
+                            <div class="col-sm-12 custom text-right">
+                            <span class="buttons open" id="openbtn_@url.Id" onclick="ShareOnGoogle('@url.Orignalurl')" type="button">Open</span>                            
+                            <span class="buttons share dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Share</span>
+   <div class="dropdown-menu newicons"  aria-labelledby="dropdownMenuButton">
+   <div data-v-441f4638="" class="label-fancy text-nowrap"><i data-v-441f4638="" aria-hidden="true" class="fa fa-bullhorn mr-2 fa-lg newfacebook"></i><b> Share It</b> </div>
+   <div><a href="https://www.facebook.com/profile" class="share-network text-t-blue-dark share-network-facebook hellooo"><span class="fa-stack fa-lg newfacebook"><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></a><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=@url.Orignalurl&p[images]=&p[title]=&p[summary]=" class="share-network text-t-blue-dark share-network-facebook"><span id="fbbbb">Facebook</span></a></div>
+   <div><a href="https://publish.twitter.com/" class="share-network text-t-blue-dark share-network-twitter hellooo"><span class="fa-stack fa-lg newfacebook"><i class="fa fa-square fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse">  </i></span></a><a href="https://twitter.com/share?url=<@url.Orignalurl>" class="share-network text-t-blue-dark share-network-twitter"><span id="fbbbb">Twitter</span></a></div>  
+   <div><a href="whatsapp://" class="share-network text-t-blue-dark share-network-whatsapp hellooo"><span class="fa-stack fa-lg newfacebook"><i class="fa fa-square fa-stack-2x"></i><i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i></span></a><a href="https://web.whatsapp.com/send?text= @url.Orignalurl" class="share-network text-t-blue-dark share-network-whatsapp"><span id="fbbbb">Whatsapp</span></a></div>
+   <div><a href="https://in.linkedin.com/" class="share-network text-t-blue-dark share-network-linkedin hellooo"><span class="fa-stack fa-lg newfacebook"><i class="fa fa-square fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></a><a href="https://LinkedIn.com/share?url= @url.Orignalurl" class="share-network text-t-blue-dark share-network-linkedin"><span id="fbbbb">LinkedIn</span></a></div>
+   <div><a href="https://mail.google.com/mail/#compose/16426a350b26c600" class="share-network text-t-blue-dark share-network-email hellooo"><span class="fa-stack fa-lg newfacebook"><i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a><a href="https://mail.google.com/mail/#compose/16426a350b26c600/url.Orignalurl" class="share-network text-t-blue-dark share-network-email"><span id="fbbbb">Email</span></a></div>
+   
+    
+   <div class="pt-2"><div class="d-flex align-items-center"><div class="pr-2"><div value="QRCodeNEW.jpg" level="L" background="#fff" foreground="#000" class=""><canvas id="newcanvas" width="240" height="120" style="width:143px; height:121px;"></canvas></div></div> <div><div class="mb-1"><a href="/image/QRCodeNEW.jpg" aria-label="Download QR code as svg 400" target="_blank" download="vh5fd565" class="btn btn-t-green btn-blockk">     
+       SVG    
+       <div value="/image/QRCodeNEW.jpg" level="L" background="#fff" foreground="#000" class="d-none"><svg height="70%" width="320%" shapeRendering="crispEdges" viewBox="0 0 25 25" style="width: 320px; height: 320px;"><path fill="#fff" d="M0,0 h25v25H0z"></path><path fill="#000" d="M0 0h7v1H0zM8 0h4v1H8zM14 0h1v1H14zM18,0 h7v1H18zM0 1h1v1H0zM6 1h1v1H6zM11 1h2v1H11zM16 1h1v1H16zM18 1h1v1H18zM24,1 h1v1H24zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM9 2h1v1H9zM11 2h1v1H11zM13 2h2v1H13zM16 2h1v1H16zM18 2h1v1H18zM20 2h3v1H20zM24,2 h1v1H24zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM10 3h4v1H10zM16 3h1v1H16zM18 3h1v1H18zM20 3h3v1H20zM24,3 h1v1H24zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM10 4h5v1H10zM16 4h1v1H16zM18 4h1v1H18zM20 4h3v1H20zM24,4 h1v1H24zM0 5h1v1H0zM6 5h1v1H6zM9 5h1v1H9zM11 5h1v1H11zM14 5h1v1H14zM16 5h1v1H16zM18 5h1v1H18zM24,5 h1v1H24zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18,6 h7v1H18zM8 7h2v1H8zM13 7h1v1H13zM15 7h2v1H15zM0 8h2v1H0zM3 8h2v1H3zM6 8h1v1H6zM9 8h1v1H9zM16 8h1v1H16zM18 8h1v1H18zM24,8 h1v1H24zM1 9h2v1H1zM4 9h1v1H4zM7 9h2v1H7zM10 9h7v1H10zM19 9h5v1H19zM0 10h2v1H0zM3 10h4v1H3zM8 10h2v1H8zM11 10h3v1H11zM15 10h1v1H15zM17 10h1v1H17zM20 10h2v1H20zM24,10 h1v1H24zM4 11h1v1H4zM8 11h1v1H8zM14 11h1v1H14zM18 11h2v1H18zM21,11 h4v1H21zM0 12h2v1H0zM5 12h3v1H5zM9 12h3v1H9zM16 12h1v1H16zM18 12h1v1H18zM24,12 h1v1H24zM0 13h2v1H0zM7 13h1v1H7zM9 13h5v1H9zM15 13h2v1H15zM20 13h1v1H20zM23 13h1v1H23zM0 14h2v1H0zM3 14h2v1H3zM6 14h1v1H6zM8 14h2v1H8zM14 14h4v1H14zM20,14 h5v1H20zM0 15h1v1H0zM5 15h1v1H5zM7 15h1v1H7zM9 15h1v1H9zM14 15h3v1H14zM19 15h1v1H19zM21 15h2v1H21zM24,15 h1v1H24zM0 16h1v1H0zM2 16h3v1H2zM6 16h2v1H6zM11 16h1v1H11zM13 16h1v1H13zM15 16h6v1H15zM22 16h2v1H22zM8 17h2v1H8zM12 17h2v1H12zM15 17h2v1H15zM20 17h1v1H20zM22 17h2v1H22zM0 18h7v1H0zM9 18h1v1H9zM11 18h4v1H11zM16 18h1v1H16zM18 18h1v1H18zM20 18h1v1H20zM24,18 h1v1H24zM0 19h1v1H0zM6 19h1v1H6zM9 19h2v1H9zM13 19h4v1H13zM20 19h1v1H20zM24,19 h1v1H24zM0 20h1v1H0zM2 20h3v1H2zM6 20h1v1H6zM8 20h1v1H8zM12 20h1v1H12zM15 20h6v1H15zM23 20h1v1H23zM0 21h1v1H0zM2 21h3v1H2zM6 21h1v1H6zM8 21h4v1H8zM15 21h4v1H15zM23,21 h2v1H23zM0 22h1v1H0zM2 22h3v1H2zM6 22h1v1H6zM9 22h1v1H9zM11 22h2v1H11zM20,22 h5v1H20zM0 23h1v1H0zM6 23h1v1H6zM8 23h1v1H8zM10 23h1v1H10zM14 23h2v1H14zM17 23h1v1H17zM19 23h2v1H19zM22,23 h3v1H22zM0 24h7v1H0zM8 24h5v1H8zM16 24h1v1H16zM18 24h1v1H18zM21 24h1v1H21zM24,24 h1v1H24z"></path></svg></div></a></div> <div class="mb-1"><a href="~/image/QRCodeNEW.jpg" aria-label="Download QR code as png 400" target="_blank" download="vh5fd565-400" class="btn btn-t-green btn-blockk">
+       PNG
+       <div value="/image/BarCodeOriginal.jpg" level="L" background="#fff" foreground="#000" class="d-none"><canvas height="348" width="348" style="width: 320px; height: 320px;"></canvas></div></a></div><div class="mb-1"><a href="/image/BarCodeOriginal.jpg" aria-label="Download QR code as png 1200" target="_blank" download="vh5fd565-1200" class="btn btn-t-green btn-blockk">
+       PNG 1200
+       <div value="/image/BarCodeOriginal.jpg" level="L" background="#fff" foreground="#000" class="d-none"><canvas height="348" width="348" style="width: 320px; height: 320px;"></canvas></div></a></div></div></div></div>
+</div>
+                             <span class="buttons copy" id="copybtn_@url.Id" onclick="Copyurl(@url.Id)" @*id="copied"*@ type="button">Copy</span>
+                             <span class="buttons remove" id="removebtn_@url.Id" onclick="RemoveUrl(@url.Id)" type="button">Remove</span>
+                            </div>
+                        </div>  
+                    }
+                } 
+                @if (!User.Identity.IsAuthenticated)  
+                {
+                   <div class="row border-bottom">
+                        <input type="text" class="form-control" id="lilliurl" />
+                        <div class="col-sm-12 tinyurl pl-2" id="lilliurl">https:7275<div id="lilliurl">/@TempData["lilliurl"]</div></div>
+                        <div class="col-sm-12 orignalUrl pl-2"> @TempData["orignal"]</div>
+                        <div class="col-sm-12 custom text-right">
+                            <span class="buttons open" onclick="ShareOnGoogle()" type="button">Open</span>
+                            <span class="buttons share" type="button">Share</span>
+                            <span class="buttons copy" onclick="Copyurl()" id="copied" type="button">Copy</span>
+                            <span class="buttons remove" id="removebtn" onclick="RemoveUrl(@TempData["orignal"])" type="button">Remove</span>
+                        </div>
+                    </div>
+                }
+                <div class="text-center py-2">
+                    <h5>No more recent URLs in your History</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+window.onload = function() {
+    var canvas = document.getElementById("newcanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("scream");
+   ctx.drawImage(img,-10, -50);
+};
+</script>
+
+<script src="~/js/Register.js"></script>
+<script src="~/js/home.js"></script>

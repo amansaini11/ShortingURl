@@ -1,0 +1,65 @@
+﻿.modalHeader {
+    margin: 0;
+    padding: 0;
+    width:100%!important;
+}
+/*.header{
+    position:fixed;
+    top:0;
+    width:98.2%;
+    z-index:1;
+    background:#fff;
+    border-bottom:1px solid black;
+}
+
+*/
+.textView{
+    margin:100px 30px;
+}
+.h1{
+    font-size:55px;
+    font-weight:bold;
+}
+.btn-group a {
+    background: #0f6a83;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    color:#fff;
+    margin-top:20px;
+}
+    .btn-group a:hover {
+        background: #0f6a83;
+        color:#fff;
+    }
+.imageView {
+    margin: 50px 30px;
+}
+.textfont{
+    font-size:20px;
+    color:#000;
+}
+.text-dark{
+    font-size:30px;
+    color:#000;
+}
+.footerText{
+    font-size:35px;
+    font-weight:bold;
+}
+.footerText2{
+    font-size:18px;
+}
+.HowItWorkHeading {
+    font-size: 60px;
+    font-weight: bold;
+}
+.HowItWorkText{
+    font-size:35px;
+}
+.how-it-work-text{
+    font-size:17px;
+}
+.How-it-work-box{
+    padding-left:15px;
+}
